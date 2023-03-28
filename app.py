@@ -1,34 +1,8 @@
 from flask import Flask, request, jsonify
 
-import Box_01
-
-import Box_2
-
-import GasValue
-
-import HeatIndex
-
-import SoilMois
-
-import Temp
-
-import WaterLvl
-
-import humidity
+import Box_01, Box_2, GasValue, HeatIndex, SoilMois, Temp, WaterLvl, humidity
 
 app = Flask(__name__)
-
-
-@app.route('/hello/', methods=['GET', 'POST'])
-def welcome():
-    return "Hello World!"
-
-
-@app.route('/api/users/add', methods=['POST'])
-def api_add_user():
-    user = request.get_json()
-    print(user['name'], user['age'])
-    return jsonify("ok")
 
 
 @app.route('/v01/device/box_01/', methods=['GET'])
