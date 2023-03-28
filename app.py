@@ -4,6 +4,12 @@ import Box_01
 
 import Box_2
 
+import GasValue
+
+import HeatIndex
+
+import Temp
+
 import humidity
 
 app = Flask(__name__)
@@ -34,6 +40,27 @@ def get_Box_02():
 def humidity_get():
     date = request.get_json()
     return_data = humidity.humidity(date['date'])
+    return jsonify(return_data)
+
+
+@app.route('/v01/device/temperature/', methods=['POST'])
+def temperature_get():
+    date = request.get_json()
+    return_data = Temp.temperature(date['date'])
+    return jsonify(return_data)
+
+
+@app.route('/v01/device/gasValue/', methods=['POST'])
+def gasValue_get():
+    date = request.get_json()
+    return_data = GasValue.gasValue(date['date'])
+    return jsonify(return_data)
+
+
+@app.route('/v01/device/heatIndex/', methods=['POST'])
+def heatIndex_get():
+    date = request.get_json()
+    return_data = HeatIndex.heatIndex(date['date'])
     return jsonify(return_data)
 
 
