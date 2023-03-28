@@ -8,11 +8,16 @@ import GasValue
 
 import HeatIndex
 
+import SoilMois
+
 import Temp
+
+import WaterLvl
 
 import humidity
 
 app = Flask(__name__)
+
 
 @app.route('/hello/', methods=['GET', 'POST'])
 def welcome():
@@ -61,6 +66,20 @@ def gasValue_get():
 def heatIndex_get():
     date = request.get_json()
     return_data = HeatIndex.heatIndex(date['date'])
+    return jsonify(return_data)
+
+
+@app.route('/v01/device/water-lvl/', methods=['POST'])
+def water_lvl():
+    date = request.get_json()
+    return_data = WaterLvl.waterLvl(date['date'])
+    return jsonify(return_data)
+
+
+@app.route('/v01/device/soil-moisture/', methods=['POST'])
+def soil_moisture():
+    date = request.get_json()
+    return_data = SoilMois.soilMoisture(date['date'])
     return jsonify(return_data)
 
 
