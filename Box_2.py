@@ -3,13 +3,13 @@ import mysql.connector
 import Config
 
 
-def sensor_Box1():
+def sensor_Box2():
     sql_connection = mysql.connector.connect(host=Config.HOST_NAME, user=Config.USER_NAME, password=Config.PASSWORD,
                                              database=Config.DATABASE_NAME)
 
     connection = sql_connection.cursor()
 
-    SQL = "SELECT Record_Date, Record_Time, Temperature, Humidity, Heat_Index, Gas_Value from real_time_box_1;"
+    SQL = "SELECT Record_Date, Record_Time, Water_Level, Soil_Moisture from real_time_box_2;"
 
     connection.execute(SQL)
 
@@ -19,14 +19,11 @@ def sensor_Box1():
         values = {
             'Record Date': x[0],
             'Record Time': x[1],
-            'Temperature': x[2],
-            'Humidity': x[3],
-            'Heat Index': x[4],
-            'Gas Value': x[5]
+            'Water Leval': x[2],
+            'Soil Moisture': x[3]
         }
 
     sql_connection.close()
 
     return values;
-
 
