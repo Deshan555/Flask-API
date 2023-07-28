@@ -2,6 +2,8 @@
 
 Welcome to our Flask API for accessing environmental sensor data! This API provides endpoints to retrieve information from various sensors, including Box_01, Box_02, humidity, temperature, gasValue, heatIndex, water level, and soil moisture. By integrating this API into your applications, you can access real-time and historical data from these sensors.
 
+𝗧𝗵𝗮𝘁 𝗣𝗿𝗼𝗷𝗲𝗰𝘁 𝗜𝘀 𝗣𝗮𝗿𝘁 𝗢𝗳 : 𝗵𝘁𝘁𝗽𝘀://𝗴𝗶𝘁𝗵𝘂𝗯.𝗰𝗼𝗺/𝗗𝗲𝘀𝗵𝗮𝗻𝟱𝟱𝟱/𝗜𝗢𝗧-𝗦𝗺𝗮𝗿𝘁_𝗙𝗮𝗿𝗺𝗶𝗻𝗴.𝗴𝗶𝘁
+
 📦 Installation and Usage 📦
 
 1. Clone or download this repository to your local machine.
