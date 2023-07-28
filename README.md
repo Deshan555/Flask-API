@@ -1,137 +1,68 @@
-# Flask-CURD_API
+# 🌐 Flask API for Environmental Sensor Data 🌐
 
-Python Flask API Documentation
-This is the documentation for the Python Flask API. The API is built using the Flask framework and provides a set of endpoints for accessing data.
+Welcome to our Flask API for accessing environmental sensor data! This API provides endpoints to retrieve information from various sensors, including Box_01, Box_02, humidity, temperature, gasValue, heatIndex, water level, and soil moisture. By integrating this API into your applications, you can access real-time and historical data from these sensors.
 
-Getting started
-To get started with the API, you'll need to have Python and Flask installed on your machine. You can install Flask using the following command:
+📦 Installation and Usage 📦
 
-bash
-Copy code
-pip install Flask
-Running the API
-To run the API, navigate to the directory containing the app.py file and run the following command:
+1. Clone or download this repository to your local machine.
+2. Ensure you have Python and Flask installed.
+3. Import the necessary modules: Box_01, Box_2, GasValue, HeatIndex, SoilMois, Temp, WaterLvl, and Humidity.
+4. Run the Flask application using the following command:
 
-bash
-Copy code
+```bash
 python app.py
-This will start the API and it will be accessible at http://localhost:5000.
+```
 
-API endpoints
-The API provides the following endpoints:
+5. The API will run on http://0.0.0.0:105/.
 
-GET /users
-This endpoint returns a list of all users in the system.
+📝 Endpoints 📝
 
-GET /users/{id}
-This endpoint returns a specific user based on their ID.
+1. **GET /v01/device/box_01/**
+   - Description: Get data from Box_01 sensor.
+   - Usage: Access this endpoint to retrieve sensor data from Box_01.
+   - Example Response: JSON data containing Box_01 sensor information.
 
-POST /users
-This endpoint allows you to create a new user.
+2. **GET /v01/device/box_02/**
+   - Description: Get data from Box_02 sensor.
+   - Usage: Access this endpoint to retrieve sensor data from Box_02.
+   - Example Response: JSON data containing Box_02 sensor information.
 
-PUT /users/{id}
-This endpoint allows you to update an existing user.
+3. **POST /v01/device/humidity/**
+   - Description: Get humidity data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve humidity data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing humidity information for the specified date.
 
-DELETE /users/{id}
-This endpoint allows you to delete a user based on their ID.
+4. **POST /v01/device/temperature/**
+   - Description: Get temperature data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve temperature data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing temperature information for the specified date.
 
-Request and Response Formats
-Request
-All endpoints accept and return data in JSON format. When making a request to the API, you should include the data in the request body in JSON format.
+5. **POST /v01/device/gasValue/**
+   - Description: Get gasValue data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve gasValue data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing gasValue information for the specified date.
 
-Response
-All endpoints return data in JSON format. The response will include a status code and a JSON object containing the requested data.
+6. **POST /v01/device/heatIndex/**
+   - Description: Get heatIndex data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve heatIndex data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing heatIndex information for the specified date.
 
-Error Handling
-In the event of an error, the API will return a JSON object containing an error message and a status code.
+7. **POST /v01/device/water-lvl/**
+   - Description: Get water level data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve water level data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing water level information for the specified date.
 
-Authentication
-This API does not currently require authentication.
+8. **POST /v01/device/soil-moisture/**
+   - Description: Get soil moisture data for a specific date.
+   - Usage: Send a POST request with a JSON payload containing the "date" field to retrieve soil moisture data for that date.
+   - Example Request Payload: `{ "date": "2023-07-28" }`
+   - Example Response: JSON data containing soil moisture information for the specified date.
 
-Examples
-Get all users
-perl
-Copy code
-GET /users
+Feel free to use and modify this Flask API to suit your specific needs. We value your feedback and contributions to make this project even better! Happy coding! 😊
 
-Response:
-{
-    "status": "success",
-    "users": [
-        {
-            "id": 1,
-            "name": "John Doe",
-            "email": "john.doe@example.com"
-        },
-        {
-            "id": 2,
-            "name": "Jane Smith",
-            "email": "jane.smith@example.com"
-        }
-    ]
-}
-Get a specific user
-vbnet
-Copy code
-GET /users/1
-
-Response:
-{
-    "status": "success",
-    "user": {
-        "id": 1,
-        "name": "John Doe",
-        "email": "john.doe@example.com"
-    }
-}
-Create a new user
-css
-Copy code
-POST /users
-
-Request:
-{
-    "name": "Bob Johnson",
-    "email": "bob.johnson@example.com"
-}
-
-Response:
-{
-    "status": "success",
-    "user": {
-        "id": 3,
-        "name": "Bob Johnson",
-        "email": "bob.johnson@example.com"
-    }
-}
-Update an existing user
-css
-Copy code
-PUT /users/1
-
-Request:
-{
-    "name": "John Smith",
-    "email": "john.smith@example.com"
-}
-
-Response:
-{
-    "status": "success",
-    "user": {
-        "id": 1,
-        "name": "John Smith",
-        "email": "john.smith@example.com"
-    }
-}
-Delete a user
-bash
-Copy code
-DELETE /users/1
-
-Response:
-{
-    "status": "success"
-}
-Conclusion
-That's it! You should now have a good understanding of the Python Flask API and how to use it. If you have any questions or issues, please let us know.
+[Insert GitHub Repository URL Here]
